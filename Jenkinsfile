@@ -87,10 +87,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                    docker run \
-                        --name ${IMAGE_TAG}-${CONTAINER} \
-                        -p \
-                        ${DOCKER_REPO}/${APP_NAME}:${IMAGE_TAG}
+                    docker run -d --name ${IMAGE_TAG}-${CONTAINER} -P ${DOCKER_REPO}/${APP_NAME}:${IMAGE_TAG}
                 """
             }
         }
