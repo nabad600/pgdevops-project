@@ -89,7 +89,7 @@ pipeline {
                 sh """
                     docker run \
                         --name ${IMAGE_TAG}-${CONTAINER} \
-                        -p 8080:8080 \
+                        -p \
                         ${DOCKER_REPO}/${APP_NAME}:${IMAGE_TAG}
                 """
             }
